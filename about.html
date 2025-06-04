@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us – Island Boyz Performance</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  /* GLOBAL RESET */
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+    color: #222;
+  }
+
+  /* HEADER */
+  header {
+    background-color: #111;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 24px;
+    color: white;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin: 10px 0 0 0;
+  }
+
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    color: red;
+  }
+
+  /* PAGE HEADER */
+  .page-header {
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+  }
+
+  .page-header h1 {
+    font-size: 36px;
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .page-header p {
+    font-size: 18px;
+    color: #444;
+  }
+
+  /* MAIN CONTENT */
+  .about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 100%;
+  }
+
+  .about-section h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: red;
+  }
+
+  .about-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  strong {
+    color: red;
+  }
+
+  .why-list {
+    padding-left: 0;
+  }
+
+  .why-list li {
+    list-style: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .why-list strong {
+    color: black;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: block;
+  }
+
+  .hours-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .hours-list li {
+    margin-bottom: 8px;
+  }
+
+  .social-media img {
+    margin-right: 10px;
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 20px;
+    }
+
+    .page-header h1,
+    .about-section h1,
+    .about-container h2 {
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .why-list li {
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .contact-info,
+    .about-section p {
+      font-size: 15px;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    iframe {
+      height: 250px;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1 class="logo">Island Boyz Performance</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="estimate.html">Get Estimate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>About Us</h1>
+    <p>Precision, performance, and passion — built from decades of experience.</p>
+  </section>
+
+  <!-- Main About Section -->
+  <div class="about-container">
+    <h2>Our Story</h2>
+    <p>At <strong>Island Boyz Performance</strong>, we live and breathe high-performance cars — especially Hondas. With <strong>over 35 years of hands-on experience working directly with Honda vehicles</strong>, our journey began in major auto service centers, where we fine-tuned our skills and built a reputation for honest, reliable, and precise work.</p>
+
+    <p>After decades of turning wrenches and tuning motors for someone else, we knew it was time to carve our own path. <strong>We opened Island Boyz Performance to pursue our lifelong dream of creating a garage where quality, culture, and craftsmanship come first.</strong> We take pride in our roots, our experience, and our commitment to helping fellow car lovers bring out the best in their builds.</p>
+
+    <p>Whether it’s a full motor swap, custom dyno tuning, or just making sure your car runs like new — <strong>our mission is simple: treat every build like it’s our own</strong>.</p>
+
+    <h2>Why Island Boyz?</h2>
+    <ul class="why-list">
+  <li>✔️ <strong>35+ years of specialized Honda experience</strong></li>
+  <li>✔️ <strong>Professional dyno tuning & performance optimization</strong></li>
+  <li>✔️ <strong>Custom builds, engine swaps, fabrication, and more</strong></li>
+  <li>✔️ <strong>Trusted by car enthusiasts all across Quebec</strong></li>
+  <li>✔️ <strong>Honest service, competitive pricing, clean work</strong></li>
+</ul>
+
+
+    <h2>Location</h2>
+    <p><strong>🏠 995 Rue Valois, Vaudreuil, QC J7V 8P2</strong></p>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.329303189533!2d-74.04361768452163!3d45.399435345834695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc928a1b9b38fef%3A0x285280d3f04e6b02!2s995%20Rue%20Valois%2C%20Vaudreuil-Dorion%2C%20QC%20J7V%208P2%2C%20Canada!5e0!3m2!1sen!2sca!4v1683835294999!5m2!1sen!2sca"
+        allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+
+    <h2>Working Hours</h2>
+    <ul class="hours-list">
+      <li><strong>Monday – Friday:</strong> 9:00 AM – 6:30 PM</li>
+      <li><strong>Saturday – Sunday:</strong> Closed</li>
+    </ul>
+
+    <h2>Contact Information</h2>
+    <p><strong>📞 Phone:</strong> <a href="tel:5145715584">514-571-5584</a></p>
+    <p><strong>📧 Email:</strong> islandboyzperformance@gmail.com </a>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get an Estimate – Island Boyz Performance</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      color: #222;
+    }
+
+    header {
+      background-color: #111;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: red;
+    }
+
+    .estimate-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    .estimate-container h1 {
+      text-align: center;
+      color: red;
+      margin-bottom: 30px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: red;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    form textarea {
+      resize: vertical;
+      height: 120px;
+    }
+
+    form button {
+      background-color: red;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: darkred;
+    }
+    /* Mobile Responsiveness */
+@media (max-width: 600px) {
+    html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+.estimate-container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+  .estimate-container {
+    padding: 20px 15px;
+  }
+
+  .estimate-container h1 {
+    font-size: 24px;
+  }
+
+  .estimate-container input,
+  .estimate-container textarea {
+    font-size: 15px;
+  }
+
+  .estimate-container button {
+    font-size: 15px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1 class="logo">Island Boyz Performance</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="estimate.html" class="active">Get Estimate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Estimate Form Section -->
+  <div class="estimate-container">
+    <h1>Request an Estimate</h1>
+    <form action="https://formspree.io/f/xqababzd" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" required />
+
+      <label for="make">Car Make</label>
+      <input type="text" name="make" id="make" required />
+
+      <label for="model">Car Model</label>
+      <input type="text" name="model" id="model" required />
+
+      <label for="year">Car Year</label>
+      <input type="text" name="year" id="year" required />
+
+      <label for="details">Work Needed / Estimate Request</label>
+      <textarea name="details" id="details" placeholder="Describe the issue or service needed..." required></textarea>
+
+      <button type="submit">Submit Request</button>
+    </form>
+     <p style="text-align: center; margin-top: 20px; color: #555;">
+    📩 <em>We’ll do our best to respond within 1 business day.</em>
+  </p>
+  </div>
+
+</body>
+</html>
