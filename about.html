@@ -160,18 +160,24 @@ header {
 
   
 
-  /* RESPONSIVE DESIGN */
-  @media (max-width: 768px) {
-    .about-container {
-      padding: 20px;
-    }
+ /* ========== RESPONSIVE STYLES ========== */
+@media (max-width: 768px) {
+  /* Header */
+  .header-logo .logo {
+    font-size: 28px;
+  }
 
-    .page-header h1,
-    .about-section h1,
-    .about-container h2 {
-      font-size: 28px;
-      text-align: center;
-    }
+  .header-nav .nav-links {
+    flex-direction: row; /* <-- Keep it horizontal */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .header-nav .nav-links li a {
+    font-size: 16px;
+  }
 
     .why-list li {
       font-size: 16px;
