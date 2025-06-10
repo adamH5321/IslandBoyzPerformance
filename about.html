@@ -224,24 +224,28 @@ header {
   </p>
 </section>
 
-<!-- Main About Section -->
+<!-- About Section -->
 <div class="about-container">
   <h2 data-en="Our Story" data-fr="Notre histoire">Our Story</h2>
 
-  <p data-en='At <strong>Island Boyz Performance</strong>, we live and breathe high-performance cars — especially Hondas. With <strong>over 35 years of hands-on experience working directly with Honda vehicles</strong>, our journey began in major auto service centers, where we fine-tuned our skills and built a reputation for honest, reliable, and precise work.'
-     data-fr='Chez <strong>Island Boyz Performance</strong>, nous vivons et respirons les voitures haute performance — surtout les Honda. Avec <strong>plus de 35 ans d’expérience pratique avec les véhicules Honda</strong>, notre parcours a commencé dans de grands centres de service automobile où nous avons perfectionné nos compétences et bâti notre réputation sur l’honnêteté, la fiabilité et la précision.'>
-    At <strong>Island Boyz Performance</strong>, we live and breathe high-performance cars — especially Hondas. With <strong>over 35 years of hands-on experience working directly with Honda vehicles</strong>, our journey began in major auto service centers, where we fine-tuned our skills and built a reputation for honest, reliable, and precise work.
-  </p>
+  <template id="about-en">
+    <p>At <strong>Island Boyz Performance</strong>, we live and breathe high-performance cars — especially Hondas. With <strong>over 35 years of hands-on experience working directly with Honda vehicles</strong>, our journey began in major auto service centers, where we fine-tuned our skills and built a reputation for honest, reliable, and precise work.</p>
 
-  <p data-en='After decades of turning wrenches and tuning motors for someone else, we knew it was time to carve our own path. <strong>We opened Island Boyz Performance to pursue our lifelong dream of creating a garage where quality, culture, and craftsmanship come first.</strong> We take pride in our roots, our experience, and our commitment to helping fellow car lovers bring out the best in their builds.'
-     data-fr='Après des décennies à réparer et à tuner des moteurs pour d’autres, nous avons su qu’il était temps de suivre notre propre voie. <strong>Nous avons fondé Island Boyz Performance pour poursuivre notre rêve de toujours : créer un garage où la qualité, la culture et le savoir-faire passent en premier.</strong> Nous sommes fiers de nos racines, de notre expérience et de notre engagement à aider d’autres passionnés à tirer le meilleur de leurs voitures.'>
-    After decades of turning wrenches and tuning motors for someone else, we knew it was time to carve our own path. <strong>We opened Island Boyz Performance to pursue our lifelong dream of creating a garage where quality, culture, and craftsmanship come first.</strong> We take pride in our roots, our experience, and our commitment to helping fellow car lovers bring out the best in their builds.
-  </p>
+    <p>After decades of turning wrenches and tuning motors for someone else, we knew it was time to carve our own path. <strong>We opened Island Boyz Performance to pursue our lifelong dream of creating a garage where quality, culture, and craftsmanship come first.</strong> We take pride in our roots, our experience, and our commitment to helping fellow car lovers bring out the best in their builds.</p>
 
-  <p data-en='Whether it’s a full motor swap, custom dyno tuning, or just making sure your car runs like new — <strong>our mission is simple: treat every build like it’s our own</strong>.'
-     data-fr='Qu’il s’agisse d’un remplacement de moteur, d’un tuning personnalisé ou simplement de s’assurer que votre voiture fonctionne parfaitement — <strong>notre mission est simple : traiter chaque projet comme si c’était le nôtre</strong>.'>
-    Whether it’s a full motor swap, custom dyno tuning, or just making sure your car runs like new — <strong>our mission is simple: treat every build like it’s our own</strong>.
-  </p>
+    <p>Whether it’s a full motor swap, custom dyno tuning, or just making sure your car runs like new — <strong>our mission is simple: treat every build like it’s our own</strong>.</p>
+  </template>
+
+  <template id="about-fr">
+    <p>Chez <strong>Island Boyz Performance</strong>, nous vivons et respirons les voitures haute performance — surtout les Honda. Avec <strong>plus de 35 ans d’expérience pratique avec les véhicules Honda</strong>, notre parcours a commencé dans de grands centres de service automobile où nous avons perfectionné nos compétences et bâti notre réputation sur l’honnêteté, la fiabilité et la précision.</p>
+
+    <p>Après des décennies à réparer et à tuner des moteurs pour d’autres, nous avons su qu’il était temps de suivre notre propre voie. <strong>Nous avons fondé Island Boyz Performance pour poursuivre notre rêve de toujours : créer un garage où la qualité, la culture et le savoir-faire passent en premier.</strong> Nous sommes fiers de nos racines, de notre expérience et de notre engagement à aider d’autres passionnés à tirer le meilleur de leurs voitures.</p>
+
+    <p>Qu’il s’agisse d’un remplacement de moteur, d’un tuning personnalisé ou simplement de s’assurer que votre voiture fonctionne parfaitement — <strong>notre mission est simple : traiter chaque projet comme si c’était le nôtre</strong>.</p>
+  </template>
+
+  <div id="about-content"></div>
+
 
 
     <h2 data-en="Why Island Boyz?" data-fr="Pourquoi choisir Island Boyz ?">Why Island Boyz?</h2>
@@ -310,6 +314,14 @@ header {
       el.placeholder = el.getAttribute(`data-${currentLang}-placeholder`);
     });
 
+    // Load the correct version of the About section
+  const about = document.getElementById('about-content');
+  if (about) {
+    const tmpl = document.getElementById(`about-${currentLang}`);
+    about.innerHTML = tmpl.innerHTML;
+  }
+
+
     // Update button label
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
@@ -331,3 +343,4 @@ header {
     }
   });
 </script>
+
