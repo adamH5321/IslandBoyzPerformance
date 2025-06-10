@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <title>About Us – Island Boyz Performance</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  /* GLOBAL RESET */
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+    color: #222;
+  }
+
+ /* Header */
+header {
+  background-color: #000;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.header-logo .logo {
+  font-size: 36px;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 10px;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+
+.header-nav .nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 20px;
+}
+
+.header-nav .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header-nav .nav-links li a:hover {
+  color: red;
+}
+
+
+  /* PAGE HEADER */
+  .page-header {
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+  }
+
+  .page-header h1 {
+    font-size: 36px;
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .page-header p {
+    font-size: 18px;
+    color: #444;
+  }
+
+  /* MAIN CONTENT */
+  .about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 100%;
+  }
+
+  .about-section h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: red;
+  }
+
+  .about-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  strong {
+    color: red;
+  }
+
+  .why-list {
+    padding-left: 0;
+  }
+
+  .why-list li {
+    list-style: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .why-list strong {
+    color: black;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: block;
+  }
+
+  .hours-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .hours-list li {
+    margin-bottom: 8px;
+  }
+
+  .social-media img {
+    margin-right: 10px;
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  
+
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 20px;
+    }
+
+    .page-header h1,
+    .about-section h1,
+    .about-container h2 {
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .why-list li {
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .contact-info,
+    .about-section p {
+      font-size: 15px;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    iframe {
+      height: 250px;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+   <header>
+  <div class="header-logo">
+    <h1 class="logo">
+      <a href="index.html" style="text-decoration: none; color: inherit;">Island Boyz Performance</a>
+    </h1>
+  </div>
+  <nav class="header-nav">
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+        <li><a href="services.html" data-en="Services" data-fr="Services">Services</a></li>
+        <li><a href="about.html" class="active" data-en="About Us" data-fr="À propos">About Us</a></li>
+        <li><a href="estimate.html" data-en="Get Estimate" data-fr="Obtenir un devis">Get Estimate</a></li>
+      </ul>
+      <button id="lang-toggle" onclick="toggleLanguage()">FR</button>
+    </div>
+  </nav>
+</header>
+
+<!-- Page Header -->
+<section class="page-header">
+  <h1 data-en="About Us" data-fr="À propos de nous">About Us</h1>
+  <p data-en="Precision, performance, and passion — built from decades of experience."
+     data-fr="Précision, performance et passion — forgées par des décennies d’expérience.">
+    Precision, performance, and passion — built from decades of experience.
+  </p>
+</section>
+
+<!-- Main About Section -->
+<div class="about-container">
+  <h2 data-en="Our Story" data-fr="Notre histoire">Our Story</h2>
+
+  <p data-en='At <strong>Island Boyz Performance</strong>, we live and breathe high-performance cars — especially Hondas. With <strong>over 35 years of hands-on experience working directly with Honda vehicles</strong>, our journey began in major auto service centers, where we fine-tuned our skills and built a reputation for honest, reliable, and precise work.'
+     data-fr='Chez <strong>Island Boyz Performance</strong>, nous vivons et respirons les voitures haute performance — surtout les Honda. Avec <strong>plus de 35 ans d’expérience pratique avec les véhicules Honda</strong>, notre parcours a commencé dans de grands centres de service automobile où nous avons perfectionné nos compétences et bâti notre réputation sur l’honnêteté, la fiabilité et la précision.'>
+    At <strong>Island Boyz Performance</strong>, we live and breathe high-performance cars — especially Hondas. With <strong>over 35 years of hands-on experience working directly with Honda vehicles</strong>, our journey began in major auto service centers, where we fine-tuned our skills and built a reputation for honest, reliable, and precise work.
+  </p>
+
+  <p data-en='After decades of turning wrenches and tuning motors for someone else, we knew it was time to carve our own path. <strong>We opened Island Boyz Performance to pursue our lifelong dream of creating a garage where quality, culture, and craftsmanship come first.</strong> We take pride in our roots, our experience, and our commitment to helping fellow car lovers bring out the best in their builds.'
+     data-fr='Après des décennies à réparer et à tuner des moteurs pour d’autres, nous avons su qu’il était temps de suivre notre propre voie. <strong>Nous avons fondé Island Boyz Performance pour poursuivre notre rêve de toujours : créer un garage où la qualité, la culture et le savoir-faire passent en premier.</strong> Nous sommes fiers de nos racines, de notre expérience et de notre engagement à aider d’autres passionnés à tirer le meilleur de leurs voitures.'>
+    After decades of turning wrenches and tuning motors for someone else, we knew it was time to carve our own path. <strong>We opened Island Boyz Performance to pursue our lifelong dream of creating a garage where quality, culture, and craftsmanship come first.</strong> We take pride in our roots, our experience, and our commitment to helping fellow car lovers bring out the best in their builds.
+  </p>
+
+  <p data-en='Whether it’s a full motor swap, custom dyno tuning, or just making sure your car runs like new — <strong>our mission is simple: treat every build like it’s our own</strong>.'
+     data-fr='Qu’il s’agisse d’un remplacement de moteur, d’un tuning personnalisé ou simplement de s’assurer que votre voiture fonctionne parfaitement — <strong>notre mission est simple : traiter chaque projet comme si c’était le nôtre</strong>.'>
+    Whether it’s a full motor swap, custom dyno tuning, or just making sure your car runs like new — <strong>our mission is simple: treat every build like it’s our own</strong>.
+  </p>
+
+
+    <h2 data-en="Why Island Boyz?" data-fr="Pourquoi choisir Island Boyz ?">Why Island Boyz?</h2>
+<ul class="why-list">
+  <li data-en="✔️ 35+ years of specialized Honda experience" data-fr="✔️ Plus de 35 ans d’expérience spécialisée sur les Honda">
+    ✔️ 35+ years of specialized Honda experience
+  </li>
+  <li data-en="✔️ Professional dyno tuning & performance optimization" data-fr="✔️ Réglage professionnel sur banc et optimisation des performances">
+    ✔️ Professional dyno tuning & performance optimization
+  </li>
+  <li data-en="✔️ Custom builds, engine swaps, fabrication, and more" data-fr="✔️ Constructions personnalisées, échanges de moteurs, fabrication, et plus">
+    ✔️ Custom builds, engine swaps, fabrication, and more
+  </li>
+  <li data-en="✔️ Trusted by car enthusiasts all across Quebec" data-fr="✔️ Apprécié par les passionnés d’automobile partout au Québec">
+    ✔️ Trusted by car enthusiasts all across Quebec
+  </li>
+  <li data-en="✔️ Honest service, competitive pricing, clean work" data-fr="✔️ Service honnête, prix compétitifs, travail soigné">
+    ✔️ Honest service, competitive pricing, clean work
+  </li>
+</ul>
+
+<h2 data-en="Location" data-fr="Adresse">Location</h2>
+<p><strong>🏠 995 Rue Valois, Vaudreuil, QC J7V 8P2</strong></p>
+<div class="map-container">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.329303189533!2d-74.04361768452163!3d45.399435345834695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc928a1b9b38fef%3A0x285280d3f04e6b02!2s995%20Rue%20Valois%2C%20Vaudreuil-Dorion%2C%20QC%20J7V%208P2%2C%20Canada!5e0!3m2!1sen!2sca!4v1683835294999!5m2!1sen!2sca"
+    allowfullscreen="" loading="lazy">
+  </iframe>
+</div>
+
+<h2 data-en="Working Hours" data-fr="Heures d’ouverture">Working Hours</h2>
+<ul class="hours-list">
+  <li>
+    <strong data-en="Monday – Friday:" data-fr="Lundi – Vendredi :">Monday – Friday:</strong> 
+    <span data-en="9:00 AM – 6:30 PM" data-fr="9h00 – 18h30">9:00 AM – 6:30 PM</span>
+  </li>
+  <li>
+    <strong data-en="Saturday – Sunday:" data-fr="Samedi – Dimanche :">Saturday – Sunday:</strong> 
+    <span data-en="Closed" data-fr="Fermé">Closed</span>
+  </li>
+</ul>
+
+<h2 data-en="Contact Information" data-fr="Coordonnées">Contact Information</h2>
+<p>
+  <strong data-en="📞 Phone:" data-fr="📞 Téléphone :">📞 Phone:</strong> 
+  <a href="tel:5145715584">514-571-5584</a>
+</p>
+<p>
+  <strong data-en="📧 Email:" data-fr="📧 Courriel :">📧 Email:</strong> 
+  <a href="mailto:islandboyzperformance@gmail.com">islandboyzperformance@gmail.com</a>
+</p>
+
+
+<script>
+  // Get saved language preference or default to English
+  let currentLang = localStorage.getItem('lang') || 'en';
+
+  function updateLanguage() {
+    // Update text content for all elements with data-en/data-fr
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.textContent = el.getAttribute(`data-${currentLang}`);
+    });
+
+    // Update placeholder text
+    document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+      el.placeholder = el.getAttribute(`data-${currentLang}-placeholder`);
+    });
+
+    // Update button label
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+      langToggle.textContent = currentLang === 'en' ? 'FR' : 'EN';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateLanguage();
+
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+      langToggle.addEventListener('click', () => {
+        // Toggle language and save it
+        currentLang = currentLang === 'en' ? 'fr' : 'en';
+        localStorage.setItem('lang', currentLang);
+        updateLanguage();
+      });
+    }
+  });
+</script>

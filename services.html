@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <title>Services - Island Boyz Performance</title>
+  <link rel="icon" type="image/png" href="logo-icon.png">
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background-color: #000;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .header-logo .logo {
+      font-size: 36px;
+      font-weight: bold;
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    .logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+
+    .header-nav .nav-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-nav .nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.header-nav .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header-nav .nav-links li a:hover {
+  color: red;
+}
+
+#lang-toggle {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+    .header-nav .nav-links li a.active {
+      color: red;
+    }
+
+    /* Page Header */
+    .page-header {
+      background-color: #f8f8f8;
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom: 3px solid #ff0000;
+    }
+
+    .page-header h1 {
+      font-size: 42px;
+      color: #ff0000;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .page-header p {
+      font-size: 18px;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Services Container */
+    .services-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    /* Service Hero Images */
+    .service-hero-image {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .service-hero-image img {
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Service Category */
+    .service-category {
+      margin-bottom: 80px;
+    }
+
+    .service-category h2 {
+      font-size: 32px;
+      color: #ff0000;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border-left: 4px solid #ff0000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .service-card h3 {
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .service-card p {
+      color: #666;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    /* Book Appointment Button */
+    .book-appointment {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .book-appointment .book-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #ff0000;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .book-appointment .book-btn:hover {
+      background-color: #cc0000;
+    }
+
+    /* Feature List */
+    .feature-list {
+      background-color: #f8f8f8;
+      padding: 40px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    .feature-list h4 {
+      color: #ff0000;
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .feature-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-columns ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-columns li {
+      padding: 8px 0;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .feature-columns li:before {
+      content: "✓ ";
+      color: #ff0000;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background-color: #000;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 36px;
+      color: #ff0000;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #ff0000;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #cc0000;
+    }
+
+    .cta-btn.secondary {
+      background-color: transparent;
+      border: 2px solid #ff0000;
+    }
+
+    .cta-btn.secondary:hover {
+      background-color: #ff0000;
+    }
+
+    /* Info Section */
+    .info-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 40px 20px;
+      background-color: #000;
+      color: white;
+      text-align: center;
+    }
+
+    .info-box {
+      flex: 1 1 250px;
+      margin: 15px;
+    }
+
+    .info-box h3 {
+      color: #ff0000;
+      margin-bottom: 10px;
+    }
+
+    .info-box a {
+      color: #ff0000;
+      text-decoration: none;
+    }
+
+    .info-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Social Media */
+    .social-media {
+      background-color: #000;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .social-title {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .social-media a {
+      display: inline-block;
+      margin: 0 15px;
+      transition: transform 0.2s ease;
+    }
+
+    .social-media a:hover {
+      transform: scale(1.1);
+    }
+
+    .social-media img {
+      width: 32px;
+      height: 32px;
+    }
+    .site-footer {
+  background-color: #000; /* Pure black to match existing dark section */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.site-footer p {
+  margin: 6px 0;
+}
+
+.site-footer strong {
+  color: red;
+}
+
+    @media (max-width: 768px) {
+      .header-logo .logo {
+        font-size: 28px;
+      }
+
+      .header-nav .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .header-nav .nav-links li a {
+        font-size: 16px;
+      }
+
+      .page-header h1 {
+        font-size: 32px;
+      }
+
+      .page-header p {
+        font-size: 16px;
+      }
+
+      .services-container {
+        padding: 40px 15px;
+      }
+
+      .service-category h2 {
+        font-size: 28px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .service-card {
+        padding: 20px;
+      }
+
+      .feature-list {
+        padding: 20px;
+      }
+
+      .feature-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-section h2 {
+        font-size: 28px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .info-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .info-box {
+        flex: 1 1 200px;
+        margin: 10px;
+        min-width: 180px;
+      }
+
+      .service-hero-image img {
+        height: 200px;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-logo">
+    <h1 class="logo">
+      <a href="index.html" style="text-decoration: none; color: inherit;">Island Boyz Performance</a>
+    </h1>
+  </div>
+  <nav class="header-nav">
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+        <li><a href="services.html" class="active" data-en="Services" data-fr="Services">Services</a></li>
+        <li><a href="about.html" data-en="About Us" data-fr="À propos">About Us</a></li>
+        <li><a href="estimate.html" data-en="Get Estimate" data-fr="Obtenir un devis">Get Estimate</a></li>
+      </ul>
+      <button id="lang-toggle" onclick="toggleLanguage()">FR</button>
+    </div>
+  </nav>
+</header>
+
+<!-- Page Header -->
+<section class="page-header">
+  <h1 data-en="Our Services" data-fr="Nos Services">Our Services</h1>
+  <p data-en="From precision engine builds to comprehensive maintenance, we deliver professional automotive services with over 35 years of Honda expertise. All our pricing is carefully studied and highly competitive in the market."
+     data-fr="De la construction précise de moteurs à un entretien complet, nous fournissons des services automobiles professionnels avec plus de 35 ans d’expérience chez Honda. Tous nos prix sont soigneusement étudiés et très compétitifs sur le marché.">
+    From precision engine builds to comprehensive maintenance, we deliver professional automotive services with over 35 years of Honda expertise. All our pricing is carefully studied and highly competitive in the market.
+  </p>
+</section>
+
+<main class="services-container">
+
+  <!-- Dyno & Tuning Services -->
+  <section class="service-category" id="dyno">
+    <div class="service-hero-image">
+      <img src="dyno.png" alt="Dyno Machine">
+    </div>
+    <h2 data-en="Dyno & Tuning Services" data-fr="Services de banc d’essai et de réglage">Dyno & Tuning Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3 data-en="Professional Dyno Testing" data-fr="Essai Dyno Professionnel">Professional Dyno Testing</h3>
+        <p data-en="Our state-of-the-art in-house dyno machine provides precise horsepower and torque measurements, helping you understand your vehicle's true performance capabilities."
+           data-fr="Notre banc d’essai interne de pointe fournit des mesures précises de puissance et de couple pour vous aider à comprendre les véritables capacités de performance de votre véhicule.">
+          Our state-of-the-art in-house dyno machine provides precise horsepower and torque measurements, helping you understand your vehicle's true performance capabilities.
+        </p>
+      </div>
+      <div class="service-card">
+        <h3 data-en="ECU Tuning & Calibration" data-fr="Réglage & Calibration de l’ECU">ECU Tuning & Calibration</h3>
+        <p data-en="Custom ECU tuning to optimize your engine's performance, fuel efficiency, and reliability. We work with all major tuning platforms and Honda systems."
+           data-fr="Réglage personnalisé de l’ECU pour optimiser les performances, l’efficacité énergétique et la fiabilité de votre moteur. Nous travaillons avec toutes les grandes plateformes de réglage et les systèmes Honda.">
+          Custom ECU tuning to optimize your engine's performance, fuel efficiency, and reliability. We work with all major tuning platforms and Honda systems.
+        </p>
+      </div>
+      <div class="service-card">
+        <h3 data-en="Performance Optimization" data-fr="Optimisation des Performances">Performance Optimization</h3>
+        <p data-en="Complete performance packages including air/fuel ratio optimization, ignition timing, and boost control for naturally aspirated and forced induction engines."
+           data-fr="Forfaits de performance complets incluant l’optimisation du ratio air/carburant, du calage de l’allumage, et du contrôle de la suralimentation pour moteurs atmosphériques et suralimentés.">
+          Complete performance packages including air/fuel ratio optimization, ignition timing, and boost control for naturally aspirated and forced induction engines.
+        </p>
+      </div>
+      <div class="service-card">
+        <h3 data-en="Dyno Data Analysis" data-fr="Analyse des Données Dyno">Dyno Data Analysis</h3>
+        <p data-en="Comprehensive analysis of your vehicle's performance data with detailed reports and recommendations for further improvements."
+           data-fr="Analyse complète des données de performance de votre véhicule avec rapports détaillés et recommandations pour de futures améliorations.">
+          Comprehensive analysis of your vehicle's performance data with detailed reports and recommendations for further improvements.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature-list">
+      <h4 data-en="Tuning Specialties" data-fr="Spécialités de Réglage">Tuning Specialties</h4>
+      <div class="feature-columns">
+        <ul>
+          <li data-en="Honda VTEC Systems" data-fr="Systèmes Honda VTEC">Honda VTEC Systems</li>
+          <li data-en="Turbo & Supercharger Tuning" data-fr="Réglage de Turbo & Compresseur">Turbo & Supercharger Tuning</li>
+          <li data-en="Fuel Injection Optimization" data-fr="Optimisation de l’injection">Fuel Injection Optimization</li>
+          <li data-en="Ignition Timing Adjustments" data-fr="Ajustement de l’allumage">Ignition Timing Adjustments</li>
+        </ul>
+        <ul>
+          <li data-en="Air/Fuel Ratio Calibration" data-fr="Calibration air/carburant">Air/Fuel Ratio Calibration</li>
+          <li data-en="Rev Limiter Configuration" data-fr="Configuration du limiteur de régime">Rev Limiter Configuration</li>
+          <li data-en="Launch Control Setup" data-fr="Installation du contrôle de lancement">Launch Control Setup</li>
+          <li data-en="Data Logging & Analysis" data-fr="Enregistrement et analyse des données">Data Logging & Analysis</li>
+        </ul>
+      </div>
+      <div class="book-appointment">
+        <a class="book-btn" href="mailto:islandboyzperformance@gmail.com?subject=Dyno%20Service%20Inquiry%20-%20[Your%20car%20model]" data-en="Book Appointment" data-fr="Prendre rendez-vous">Book Appointment</a>
+      </div>
+    </div>
+  </section>
+
+
+ <!-- Engine Building & Modifications -->
+<section class="service-category" id="engine">
+  <div class="service-hero-image">
+    <img src="engine.jpg" alt="Engine Building">
+  </div>
+  <h2 data-en="Engine Building & Modifications" data-fr="Construction et modifications de moteurs">Engine Building & Modifications</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <h3 data-en="Complete Engine Builds" data-fr="Assemblages complets de moteurs">Complete Engine Builds</h3>
+      <p data-en="From mild street builds to full race engines, we build motors from the ground up with precision machining and performance-focused components."
+         data-fr="Des moteurs de rue légers aux moteurs de course complets, nous construisons des moteurs de A à Z avec un usinage de précision et des composants axés sur la performance.">
+        From mild street builds to full race engines, we build motors from the ground up with precision machining and performance-focused components.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 data-en="Engine Rebuilds & Refreshes" data-fr="Reconstructions et remises à neuf de moteurs">Engine Rebuilds & Refreshes</h3>
+      <p data-en="Comprehensive engine rebuilds including bore and hone, new pistons, rings, bearings, and complete valve train service for optimal performance and reliability."
+         data-fr="Reconstruction complète de moteurs incluant alésage, nouveaux pistons, segments, roulements et service complet de la distribution pour une performance et fiabilité optimales.">
+        Comprehensive engine rebuilds including bore and hone, new pistons, rings, bearings, and complete valve train service for optimal performance and reliability.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 data-en="Performance Modifications" data-fr="Modifications de performance">Performance Modifications</h3>
+      <p data-en="Bolt-on performance upgrades including turbo/supercharger installations, intake and exhaust systems, and internal engine modifications."
+         data-fr="Améliorations de performance comprenant l'installation de turbo/compresseur, systèmes d'admission et d'échappement, et modifications internes du moteur.">
+        Bolt-on performance upgrades including turbo/supercharger installations, intake and exhaust systems, and internal engine modifications.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 data-en="Head Work & Valve Jobs" data-fr="Travail de culasse et soupapes">Head Work & Valve Jobs</h3>
+      <p data-en="Professional cylinder head services including valve jobs, port and polish, cam installations, and complete top-end rebuilds."
+         data-fr="Services professionnels de culasse incluant le rodage de soupapes, l'usinage des conduits, l'installation d'arbres à cames et la remise à neuf complète de la partie haute.">
+        Professional cylinder head services including valve jobs, port and polish, cam installations, and complete top-end rebuilds.
+      </p>
+    </div>
+  </div>
+
+  <div class="feature-list">
+    <h4 data-en="Engine Building Capabilities" data-fr="Compétences en construction de moteurs">Engine Building Capabilities</h4>
+    <div class="feature-columns">
+      <ul>
+        <li data-en="Honda B, K, F, H Series Engines" data-fr="Moteurs Honda séries B, K, F, H">Honda B, K, F, H Series Engines</li>
+        <li data-en="Precision Engine Balancing" data-fr="Équilibrage moteur de précision">Precision Engine Balancing</li>
+        <li data-en="Custom Piston Installations" data-fr="Installation de pistons personnalisés">Custom Piston Installations</li>
+        <li data-en="Performance Cam Installations" data-fr="Installation d’arbres à cames performance">Performance Cam Installations</li>
+        <li data-en="Turbo System Integration" data-fr="Intégration de système turbo">Turbo System Integration</li>
+      </ul>
+      <ul>
+        <li data-en="Forged Internal Components" data-fr="Composants internes forgés">Forged Internal Components</li>
+        <li data-en="Race Engine Preparation" data-fr="Préparation moteur de course">Race Engine Preparation</li>
+        <li data-en="Engine Management Systems" data-fr="Systèmes de gestion moteur">Engine Management Systems</li>
+        <li data-en="Fuel System Upgrades" data-fr="Améliorations du système d’alimentation">Fuel System Upgrades</li>
+        <li data-en="Cooling System Modifications" data-fr="Modifications du système de refroidissement">Cooling System Modifications</li>
+      </ul>
+    </div>
+    <div class="book-appointment">
+      <a class="book-btn" href="mailto:islandboyzperformance@gmail.com?subject=Engine%20Service%20Inquiry%20-%20[Your%20car%20model]" data-en="Book Appointment" data-fr="Prendre rendez-vous">Book Appointment</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Regular Maintenance & Repairs -->
+<section class="service-category" id="maintenance">
+  <div class="service-hero-image">
+    <img src="service.jpg" alt="Regular Maintenance">
+  </div>
+  <h2 data-en="Regular Maintenance & Repairs" data-fr="Entretien régulier et réparations">Regular Maintenance & Repairs</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <h3 data-en="Oil Changes & Fluid Services" data-fr="Vidanges d'huile et services de fluides">Oil Changes & Fluid Services</h3>
+      <p data-en="Regular maintenance oil changes, transmission fluid, coolant, brake fluid, and differential service for all makes and models."
+         data-fr="Entretien régulier incluant vidanges d'huile, liquide de transmission, liquide de refroidissement, liquide de frein et service différentiel pour toutes marques.">
+        Regular maintenance oil changes, transmission fluid, coolant, brake fluid, and differential service for all makes and models.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 data-en="Brake Service & Repair" data-fr="Service et réparation des freins">Brake Service & Repair</h3>
+      <p data-en="Complete brake system service including pad and rotor replacement, brake fluid flush, and brake line repairs for optimal stopping power."
+         data-fr="Service complet de freinage incluant remplacement des plaquettes et disques, purge du liquide de frein et réparations des conduites pour un freinage optimal.">
+        Complete brake system service including pad and rotor replacement, brake fluid flush, and brake line repairs for optimal stopping power.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 data-en="Suspension & Steering" data-fr="Suspension et direction">Suspension & Steering</h3>
+      <p data-en="Suspension component replacement, alignment services, steering repairs, and performance suspension installations and tuning."
+         data-fr="Remplacement de composants de suspension, alignements, réparations de direction, et installation/réglage de suspensions performantes.">
+        Suspension component replacement, alignment services, steering repairs, and performance suspension installations and tuning.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 data-en="Electrical System Diagnosis" data-fr="Diagnostic du système électrique">Electrical System Diagnosis</h3>
+      <p data-en="Complete electrical system diagnosis and repair including alternators, starters, wiring issues, and modern automotive electronics."
+         data-fr="Diagnostic et réparation complets du système électrique incluant alternateurs, démarreurs, problèmes de câblage et électronique automobile moderne.">
+        Complete electrical system diagnosis and repair including alternators, starters, wiring issues, and modern automotive electronics.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 data-en="Timing Belt & Chain Service" data-fr="Service de courroie/chaîne de distribution">Timing Belt & Chain Service</h3>
+      <p data-en="Professional timing belt and chain replacement with water pump service, ensuring your engine runs smoothly and reliably."
+         data-fr="Remplacement professionnel de la courroie ou chaîne de distribution avec service de la pompe à eau, pour un moteur fiable et fluide.">
+        Professional timing belt and chain replacement with water pump service, ensuring your engine runs smoothly and reliably.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 data-en="AC & Climate Control" data-fr="Climatisation et contrôle climatique">AC & Climate Control</h3>
+      <p data-en="Air conditioning repair and maintenance, including refrigerant service, compressor replacement, and complete system diagnostics."
+         data-fr="Entretien et réparation de climatisation incluant recharge de réfrigérant, remplacement du compresseur et diagnostic complet du système.">
+        Air conditioning repair and maintenance, including refrigerant service, compressor replacement, and complete system diagnostics.
+      </p>
+    </div>
+  </div>
+
+  <div class="feature-list">
+    <h4 data-en="Additional Services" data-fr="Services supplémentaires">Additional Services</h4>
+    <div class="feature-columns">
+      <ul>
+        <li data-en="Pre-Purchase Inspections" data-fr="Inspections avant achat">Pre-Purchase Inspections</li>
+        <li data-en="Diagnostic Trouble Shooting" data-fr="Diagnostic et dépannage">Diagnostic Trouble Shooting</li>
+        <li data-en="Clutch Replacement" data-fr="Remplacement d’embrayage">Clutch Replacement</li>
+        <li data-en="Transmission Service" data-fr="Service de transmission">Transmission Service</li>
+        <li data-en="Radiator & Cooling Service" data-fr="Service du radiateur et refroidissement">Radiator & Cooling Service</li>
+      </ul>
+      <ul>
+        <li data-en="Exhaust System Repair" data-fr="Réparation du système d’échappement">Exhaust System Repair</li>
+        <li data-en="Fuel System Cleaning" data-fr="Nettoyage du système d’essence">Fuel System Cleaning</li>
+        <li data-en="Battery & Charging System" data-fr="Batterie et système de charge">Battery & Charging System</li>
+        <li data-en="Tire Mounting & Balancing" data-fr="Montage et équilibrage des pneus">Tire Mounting & Balancing</li>
+        <li data-en="General Automotive Repair" data-fr="Réparation automobile générale">General Automotive Repair</li>
+      </ul>
+    </div>
+    <div class="book-appointment">
+      <a class="book-btn"
+         href="mailto:islandboyzperformance@gmail.com?subject=Maintenance%20and%20Repair%20Service%20Inquiry%20-%20[Your%20car%20model]"
+         data-en="Book Appointment" data-fr="Prendre rendez-vous">Book Appointment</a>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <h2 data-en="Ready to Get Started?" data-fr="Prêt à commencer ?">Ready to Get Started?</h2>
+  <p data-en="Whether you need routine maintenance or a complete performance build, our experienced team is ready to help bring your automotive vision to life."
+     data-fr="Que vous ayez besoin d’un entretien régulier ou d’une construction moteur complète, notre équipe expérimentée est prête à réaliser votre vision automobile.">
+    Whether you need routine maintenance or a complete performance build, our experienced team is ready to help bring your automotive vision to life.
+  </p>
+  <div class="cta-buttons">
+    <a class="cta-btn" href="mailto:islandboyzperformance@gmail.com?subject=Appointment%20Inquiry%20-%20[Your%20car%20model]"
+       data-en="Schedule Service" data-fr="Planifier un service">Schedule Service</a>
+    <a class="cta-btn secondary" href="estimate.html"
+       data-en="Request Estimate" data-fr="Demander un devis">Request Estimate</a>
+  </div>
+</section>
+
+<!-- Contact Info Section -->
+<section class="info-section">
+  <div class="info-box">
+    <h3 data-en="📍 Location" data-fr="📍 Adresse">📍 Location</h3>
+    <p>995 Rue Valois, Vaudreuil, Quebec</p>
+  </div>
+  <div class="info-box">
+    <h3 data-en="⏰ Working Hours" data-fr="⏰ Horaires">⏰ Working Hours</h3>
+    <p data-en="Monday to Friday<br>9:00 A.M – 6:30 P.M" data-fr="Lundi au vendredi<br>9h00 – 18h30">Monday to Friday<br>9:00 A.M – 6:30 P.M</p>
+  </div>
+  <div class="info-box">
+    <h3 data-en="📞 Contact" data-fr="📞 Contact">📞 Contact</h3>
+    <p>Phone: (514) 571-5584<br>Email: <a href="mailto:islandboyzperformance@gmail.com">islandboyzperformance@gmail.com</a></p>
+  </div>
+</section>
+
+<!-- Social Media Links -->
+<div class="social-media">
+  <p class="social-title" data-en="Follow us on our socials" data-fr="Suivez-nous sur les réseaux sociaux">Follow us on our socials</p>
+  <a href="https://www.instagram.com/islandboyzperformance" target="_blank">
+    <img src="Instagram_icon.png" alt="Instagram">
+  </a>
+  <a href="https://www.facebook.com/islandboyzperformance" target="_blank">
+    <img src="download.png" alt="Facebook">
+  </a>
+</div>
+
+<!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Island Boyz Performance. All rights reserved.</p>
+    <p>Website designed and developed by <strong>Adam Halabi</strong>.</p>
+  </footer>
+
+<script>
+  let currentLang = localStorage.getItem('lang') || 'en';
+
+  function updateLanguage() {
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.innerHTML = el.getAttribute(`data-${currentLang}`);
+    });
+
+    document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+      el.placeholder = el.getAttribute(`data-${currentLang}-placeholder`);
+    });
+
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+      langToggle.textContent = currentLang === 'en' ? 'FR' : 'EN';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateLanguage();
+
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+      langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'en' ? 'fr' : 'en';
+        localStorage.setItem('lang', currentLang);
+        updateLanguage();
+      });
+    }
+  });
+</script>
+
+
+
+
