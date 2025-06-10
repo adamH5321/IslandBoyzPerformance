@@ -231,6 +231,10 @@ a.section-link {
     font-size: 16px;
   }
 
+ #lang-toggle {
+    bottom: 10px;
+}
+
   /* ... (keep the rest of the styles below this) */
 
 
