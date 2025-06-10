@@ -232,7 +232,9 @@ a.section-link {
   }
 
  #lang-toggle {
-    bottom: 10px;
+    position: relative;
+    top: -5px;
+    left: 5px;
 }
 
   /* ... (keep the rest of the styles below this) */
