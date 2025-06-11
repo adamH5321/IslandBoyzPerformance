@@ -275,7 +275,10 @@ header {
 </ul>
 
 <h2 data-en="Location" data-fr="Adresse">Location</h2>
-<p><strong>🏠 995 Rue Valois, Vaudreuil, QC J7V 8P2</strong></p>
+<p id="location-text">
+  <strong>🏠 995 Rue Valois, Vaudreuil, QC J7V 8P2</strong>
+</p>
+
 <div class="map-container">
   <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.329303189533!2d-74.04361768452163!3d45.399435345834695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc928a1b9b38fef%3A0x285280d3f04e6b02!2s995%20Rue%20Valois%2C%20Vaudreuil-Dorion%2C%20QC%20J7V%208P2%2C%20Canada!5e0!3m2!1sen!2sca!4v1683835294999!5m2!1sen!2sca"
@@ -314,6 +317,14 @@ header {
     // Update text content for all elements with data-en/data-fr
     document.querySelectorAll('[data-en]').forEach(el => {
       el.textContent = el.getAttribute(`data-${currentLang}`);
+      // Handle bilingual Location text with HTML formatting
+const locationText = document.getElementById('location-text');
+if (locationText) {
+  locationText.innerHTML = currentLang === 'en'
+    ? '<strong>🏠 995 Rue Valois, Vaudreuil, QC J7V 8P2 (Doors 11 and 12 in the back)</strong>'
+    : '<strong>🏠 995 Rue Valois, Vaudreuil, QC J7V 8P2 (Portes 11 et 12 à l’arrière)</strong>';
+}
+
     });
 
     // Update placeholder text
